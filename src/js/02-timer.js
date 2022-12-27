@@ -36,7 +36,8 @@ flatpickr(dataTime, options);
 start.addEventListener('click', () => {
   timerId = setInterval(() => {
     if (Date.parse(tickTime) < Date.parse(new Date())) {
-      start.removeEventListener('click', () => clearInterval(timerId));
+      // start.removeEventListener('click', () => clearInterval(timerId));
+      start.clearInterval(timerId);
       return;
     }
     console.log('more', Date.parse(tickTime) < Date.parse(new Date()));
